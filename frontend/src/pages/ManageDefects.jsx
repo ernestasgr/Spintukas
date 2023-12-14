@@ -21,7 +21,6 @@ export const ManageDefects = () => {
         );
         if (response.ok) {
           const data = await response.json();
-          console.log(data);
           setDefects(data);
         }
       } catch (error) {
