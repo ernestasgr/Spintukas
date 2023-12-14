@@ -101,7 +101,6 @@ export const DefectsList = ({ defects: initialDefects }) => {
     let message = "Defect updated successfully";
 
     if (!response.ok) {
-      console.log(response);
       isError = true;
       message = "There was an error updating defect";
     }
@@ -115,7 +114,6 @@ export const DefectsList = ({ defects: initialDefects }) => {
   };
 
   const changeResolutionDetails = (defectId, desc) => {
-    console.log(desc);
     const updatedDefects = defects.map((defect) => {
       if (defect.defect_id === defectId) {
         return { ...defect, resolution_details: desc };
@@ -147,7 +145,6 @@ export const DefectsList = ({ defects: initialDefects }) => {
     let message = "Defect updated successfully";
 
     if (!response.ok) {
-      console.log(response);
       isError = true;
       message = "There was an error updating defect";
     }

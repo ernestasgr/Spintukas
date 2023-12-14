@@ -52,7 +52,6 @@ const Login = () => {
         isError = true;
         try {
           const errorData = await response.json();
-          console.log(errorData);
           if (errorData && errorData.message) {
             message = errorData.message;
           } else {
@@ -63,7 +62,6 @@ const Login = () => {
         }
       } else {
         const data = await response.json();
-        console.log(data.access_token);
         localStorage.setItem("username", formData.username);
         localStorage.setItem("access_token", data.access_token);
         localStorage.setItem("is_admin", data.is_admin);
@@ -79,7 +77,6 @@ const Login = () => {
         navigate("/main");
       }
     } catch (error) {
-      console.error("An error occurred:", error);
       toast({
         title: "An error occurred while processing your request",
         status: "error",
