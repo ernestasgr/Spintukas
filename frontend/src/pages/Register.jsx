@@ -53,7 +53,6 @@ export const Register = () => {
         isError = true;
         try {
           const errorData = await response.json();
-          console.log(errorData);
           if (errorData && errorData.message) {
             message = errorData.message;
           } else {

@@ -196,7 +196,7 @@ export const DefectsList = ({ defects: initialDefects }) => {
 
       <Wrap spacing="30px" justify="center">
         {defectsToDisplay.map((defect) => (
-          <WrapItem key={defect.id} width="300px" height="100%">
+          <WrapItem key={defect.defect_id} width="300px" height="100%">
             <Center>
               <Box
                 borderWidth="1px"
@@ -248,7 +248,11 @@ export const DefectsList = ({ defects: initialDefects }) => {
                       <label>Resolution Details:</label>
                       <Textarea
                         isDisabled={localStorage.getItem("is_admin") !== "true"}
-                        value={defect.resolution_details}
+                        value={
+                          defect.resolution_details
+                            ? defect.resolution_details
+                            : ""
+                        }
                         onChange={(e) =>
                           changeResolutionDetails(
                             defect.defect_id,
