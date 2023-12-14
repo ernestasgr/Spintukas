@@ -208,7 +208,7 @@ export const DefectsList = ({ defects: initialDefects }) => {
               >
                 <Container maxW="lg">
                   <Image
-                    src={config.backendUrl + "/media/" + defect.image}
+                    src={config.backendUrl + defect.image}
                     alt={`Defect ${defect.id}`}
                     objectFit="cover"
                   />
